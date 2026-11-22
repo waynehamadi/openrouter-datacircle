@@ -1,0 +1,66 @@
+{
+  "name": "@datacircle/openrouter",
+  "version": "0.1.0",
+  "description": "OpenRouter Agent tools on Datacircle's open API, for callModel: find the best GTM APIs. List every API and see which provider ranks first on each one. Search every provider's pricing plans. See where a provider ranks. No API key needed.",
+  "keywords": [
+    "openrouter",
+    "openrouter-agent",
+    "callmodel",
+    "agent",
+    "tool-calling",
+    "tools",
+    "gtm",
+    "gtm-apis",
+    "api",
+    "api-directory",
+    "api-pricing",
+    "b2b-data",
+    "data-enrichment",
+    "datacircle"
+  ],
+  "homepage": "https://datacircle.dev",
+  "bugs": {
+    "url": "https://github.com/waynehamadi/openrouter-datacircle/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waynehamadi/openrouter-datacircle.git"
+  },
+  "license": "MIT",
+  "author": "Datacircle <wayne@datacircle.dev> (https://datacircle.dev)",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "test": "npm run build && node test/live.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "zod": "^4.0.0"
+  },
+  "peerDependencies": {
+    "@openrouter/agent": ">=0.7.0"
+  },
+  "devDependencies": {
+    "@openrouter/agent": "1.2.2",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
